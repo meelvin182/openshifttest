@@ -7,6 +7,7 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -28,6 +29,7 @@ TextUpdater textUpdater;
             e.printStackTrace();
         }*/
         sendMsg(update.getMessage().getChatId().toString(), message);
+        sendMsg(update.getMessage().getChatId().toString(), new File("testFile").toString());
     }
 
     /**
