@@ -7,18 +7,17 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 
 @Component
-public class DegrodikiBot extends TelegramLongPollingBot {
+public class DegrodikiBot extends TelegramLongPollingBot  {
 
 //@Autowired
 //TextUpdater textUpdater;
 
     @Override
-    public void onUpdateReceived(Update update) {
+    public void onUpdateReceived(Update update){
         TextUpdater textUpdater = new TextUpdater();
         System.out.println(textUpdater.toString());
        System.out.println(textUpdater);
@@ -30,7 +29,22 @@ public class DegrodikiBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }*/
         sendMsg(update.getMessage().getChatId().toString(), message);
-        sendMsg(update.getMessage().getChatId().toString(), new File("testFile").toString());
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader("testFile"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String st;
+        try {
+            while ((st = br.readLine()) != null)
+                System.out.println(st);
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
     /**
