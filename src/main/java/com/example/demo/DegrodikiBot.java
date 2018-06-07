@@ -13,20 +13,19 @@ import java.io.IOException;
 @Component
 public class DegrodikiBot extends TelegramLongPollingBot {
 
-    @Autowired
-    TextUpdater textUpdater;
+
 
     @Override
     public void onUpdateReceived(Update update) {
-
-        System.out.println(textUpdater);
+ //       TextUpdater textUpdater = new TextUpdater();
+ //       System.out.println(textUpdater);
         String message = update.getMessage().getText();
-
+/*
         try {
             textUpdater.writeSendText(message);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         sendMsg(update.getMessage().getChatId().toString(), message);
     }
 
