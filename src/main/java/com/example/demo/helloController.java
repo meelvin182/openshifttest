@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author sokolov
  */
+
 @RestController
 public class helloController {
     @RequestMapping("/")
