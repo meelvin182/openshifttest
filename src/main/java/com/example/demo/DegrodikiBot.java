@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
@@ -29,9 +28,9 @@ public class DegrodikiBot extends TelegramLongPollingBot  {
         }*/
         sendMsg(update.getMessage().getChatId().toString(), message);
         BufferedReader br = null;
-        System.out.println("testFile.txt");
+        System.out.println("com/example/demo/testFile.txt");
         try {
-            br = new BufferedReader(new FileReader("testFile.txt"));
+            br = new BufferedReader(new FileReader("com/example/demo/testFile.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
