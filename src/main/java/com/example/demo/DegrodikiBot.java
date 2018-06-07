@@ -18,7 +18,8 @@ public class DegrodikiBot extends TelegramLongPollingBot  {
 
     @Override
     public void onUpdateReceived(Update update){
-        TextUpdater textUpdater = new TextUpdater();
+    //
+        //    TextUpdater textUpdater = new TextUpdater();
         String message = update.getMessage().getText();
 
 /*        try {
