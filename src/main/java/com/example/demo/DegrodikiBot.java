@@ -28,9 +28,9 @@ public class DegrodikiBot extends TelegramLongPollingBot  {
         }*/
         sendMsg(update.getMessage().getChatId().toString(), message);
         BufferedReader br = null;
-        System.out.println("com/example/demo/testFile.txt");
+        System.out.println("testFile.txt");
         try {
-            br = new BufferedReader(new FileReader("com/example/demo/testFile.txt"));
+            br = new BufferedReader(new FileReader("testFile.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
