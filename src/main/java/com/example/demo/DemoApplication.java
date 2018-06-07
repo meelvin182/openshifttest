@@ -10,10 +10,11 @@ import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 public class DemoApplication {
 
 	public static void main(String[] args) {
+		ApiContextInitializer.init();
+
 		SpringApplication.run(DemoApplication.class, args);
 
 		System.out.println("Startuem");
-		ApiContextInitializer.init();
 		TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 		try {
 
